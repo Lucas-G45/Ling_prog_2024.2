@@ -19,6 +19,11 @@
    printf("Nome: %s\n", nome); // usa-se "%s" porque se trata de um vetor
    printf("Primeira letra: %c\n", nome[0]);
 
+   printf("Digite o valor de x: \n");
+   scanf("%d", &x);
+   printf("O valor digitado para x foi: \n");
+
    printf("Olá mundo! \n");
+
 
  }
