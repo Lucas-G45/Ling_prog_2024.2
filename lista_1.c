@@ -48,11 +48,34 @@ void q6() {
 
 //7. Faça um programa que leia o nome o endereço e o telefone de
 //   um cliente e ao final, imprima esses dados.
+void q7() {
+    char nome[50], ende[60], tel[14];
+    printf("Digite o seu nome: \n");
+    scanf(" %50[^\n]",nome);
+    printf("Digite o seu endereço: \n");
+    scanf(" %60[^\n]",ende);
+    printf("Digite o seu telefone: \n");
+    scanf(" %14[^\n]",tel);
+    printf("Você é: %s\nSeu endereço é: %s\nSeu telefone é: %s\nEstá correto? \n", nome, ende, tel);
+}
 
 //8. Faça um programa que leia dois números inteiros e imprima a
 //   subtração deles.
-
-//9. Faça um programa que leia umnúmero real e imprima ¼ deste número.
+void q8() {
+    int x, y;
+    printf("Escreva um número qualquer: \n");
+    scanf("%d", &x);
+    printf("Escreva mais um número: \n");
+    scanf("%d", &y);
+    printf("A subtração dos dois numeros será: %d\n", x-y);
+}
+//9. Faça um programa que leia um número real e imprima ¼ deste número.
+void q9() {
+    float x;
+    printf("Digite qualquer número real: \n");
+    scanf("%f", &x);
+    printf("Quando dividimos seu número por 4, ele se torna aproximadamente: %.3f\n", x/4);
+}
 
 //10. Faça um programa que leia três números reais e calcule a
 //    média aritmética destes números. Ao final, o programa deve
@@ -113,6 +136,7 @@ void q6() {
 //    necessário também ler o valor da cotação do dólar.
 
 int main() {
-    q6();
+    q8();
+    q9();
     return EXIT_SUCCESS;
 }
