@@ -80,25 +80,61 @@ void q9() {
 //10. Faça um programa que leia três números reais e calcule a
 //    média aritmética destes números. Ao final, o programa deve
 //    imprimir o resultado do cálculo.
-
+void q10() {
+    float x,y,z;
+    printf("Escreva 3 números reais em sequência: \n");
+    scanf("%f %f %f", &x,&y,&z);
+    printf("A média aritimética dos 3 números é: %.3f\n", (x+y+z)/3);
+}
 //11. Faça um programa que leia dois números reais e calcule as
 //    quatro operações básicas entre estes dois números, adição,
 //    subtração,multiplicação e divisão. Ao final, o programa
 //    deve imprimir os resultados dos cálculos.
+void q11() {
+    float a,b,c,d;
+    printf("Escreva 4 números reais a seguir: \n");
+    scanf("%f %f %f %f", &a,&b,&c,&d);
+    printf("A soma e a subtração deles é respectivamente: %.2f e %.2f\n", a+b+c+d, a-b-c-d);
+    printf("Já a multiplicação e a divisão são: %.2f e %.2f\n", a*b*c*d,a/b/c/d);
+}
 
 //12. Faça um programa que leia um número real e calcule o
 //    quadrado deste número. Ao final, o programa deve
 //    imprimir o resultado do cálculo.
-
+void q12() {
+    float x;
+    printf("Desta vez, escreva apenas UM número real: \n");
+    scanf("%f",&x);
+    printf("O quadrado desse número é: %.2f\n", x*x);
+}
 //13. Faça um programa que leia o saldo de uma conta poupança e
 //    imprima o novo saldo, considerando um reajuste de 2%.
+void q13() {
+    float y;
+    printf("Bem vindo!\nDigite o saldo da sua poupança atual para que possamos ajuda-lo com o reajuste: \n");
+    scanf(" %f",&y);
+    printf("O saldo da sua conta depois do reajuste será: %.2f\nEspero que tenhamos ajudado!\n", 102*y/100);
+}
 
 //14. Faça um programa que leia a base e a altura de um retângulo
 //    e imprima o perímetro (base*2 + altura*2) e a área (base * altura).
+void q14() {
+    float x,y;
+    printf("Descreva o retangulo na seguinte ordem: \nBase, altura\n");
+    scanf("%f %f",&x,&y);
+    printf("Sua área e seu perímetro são, respectivamente: %.2f e %.2f\n", x*2+y*2, x*y);
+}
 
 //15. Faça um programa que leia o valor de um produto, o percentual
 //    do desconto desejado e imprima o valor do desconto e o valor
 //    do produto subtraindo o desconto.
+void q15() {
+    float p,des;
+    printf("Digite o preço do seu produto para aproveitar o desconto!\n");
+    scanf(" %f",&p);
+    des=20*p/100;
+    printf("O seu produto terá R$%.2f de desconto e seu novo valor será: R$%.2f!\nAproveite nossa loja!\n",des,p-des);
+}
 
 //16. Faça um programa que calcule o reajuste do salário de um
 //    funcionário. Para isso, o programa deverá ler o salário atual
@@ -136,7 +172,7 @@ void q9() {
 //    necessário também ler o valor da cotação do dólar.
 
 int main() {
-    q8();
-    q9();
+    q14();
+    q15();
     return EXIT_SUCCESS;
 }
