@@ -154,6 +154,13 @@ void q16() {
 //    com base na fórmula a seguir. Após calcular o programa deve
 //    imprimir o resultado da conversão.
 //    F = (9 x C +160) / 5
+void q17() {
+    int f,c;
+    printf("Digite o valor em centígrados: \n");
+    scanf(" %d", &c);
+    f = (9 * c + 160) / 5;
+    printf("O valor em Farenheint é de: %d\n",f);
+}
 
 //18. Faça um programa que calcule a quantidade de litros de combustível
 //    consumidos em uma viagem, sabendo-se que o carro tem autonomia de
@@ -167,6 +174,14 @@ void q16() {
 //    • L = Litros de combustível consumidos
 //    Ao final, o programa deverá imprimir a distância percorrida e a
 //    quantidade de litros consumidos na viagem.
+void q18() {
+    float d,t,v,l;
+    printf("Digite o tempo(em horas) e a velocidade(em km/h) do carro, respectivamente: \n");
+    scanf(" %f%f", &t,&v);
+    d = t*v;
+    l = d/12;
+    printf("nessa viajem foi percorrida uma distância de %.1fKm e foram consumidos %.1fL de gasolina", d,l);
+}
 
 //19. Faça um programa que calcule o valor de uma prestação em atraso.
 //    Para isso, o programa deve ler o valor da prestação vencida, a
@@ -174,13 +189,33 @@ void q16() {
 //    programa deve imprimir o valor da prestação atrasada, o período
 //    de atraso, os juros que serão cobrados pelo período de atraso, o
 //    valor da prestação acrescido dos juros. Considere juros simples.
+void q19() {
+    float c,j,i,m,t;
+    c=0.0; j=0.0; i=0.0; m=0.0; t=0.0;
+    printf(" Digite abaixo respectivamente o valor da prestação vencida, dos juros e do tempo de atraso do cliente: \n");
+    scanf(" %f%f%f", &c,&i,&t);
+    j = c*i*t/100;
+    m = j+c;
+    printf("O valor da sua prestação será de R$%.2f.\n", m);
+    printf("Pois se passou um perído de %.1f em tempo,\num juros de %.2f,\ne o valor original era de R$%.2f.\n", t,j,c);
+
+}
 
 //20. Faça um programa que efetue a apresentação do valor da conversão
 //    em real (R$) de um valor lido em dólar (US$). Para isso, será
 //    necessário também ler o valor da cotação do dólar.
+void q20(){
+    float r,d;
+    r = 0;d= 0;
+    printf("Escreva a cotação do dólar mais recente:\n");
+    scanf(" %f",&d);
+    printf("Escreva o valor original em reais:\n");
+    scanf(" %f",&r);
+    printf("Você terá o equivalente a $%.2f em dólares", r/d);
+}
 
 int main() {
-    q15();
-    q16();
+    q19();
+    q20();
     return EXIT_SUCCESS;
 }
