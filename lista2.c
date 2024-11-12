@@ -192,49 +192,53 @@ void questao10() {
 	int a,b,c;
 	printf("Digite 3 números quaisquer:\n");
 	scanf(" %d %d %d",&a,&b,&c);
-	if(c<b<a)
+	if(c<b && b<a)
 	{
-		printf("Seus números em ordem crescente são: %d, %d, %d", c, b, a);
-	}
-	if(c<a<b)
+		printf("Seus números em ordem crescente são: %d, %d, %d\n", c, b, a);
+	} else {
+	if(c<a && a<b)
 	{
-		printf("Seus números em ordem crescente são: %d, %d, %d", c, b, a);
-	}
-	if(b<a<c)
+		printf("Seus números em ordem crescente são: %d, %d, %d\n", c, a, b);
+	} else {
+	if(b<a && a<c)
 	{
-		printf("Seus números em ordem crescente são: %d, %d, %d", b, a, c);
-	}
-	if(b<c<a)
+		printf("Seus números em ordem crescente são: %d, %d, %d\n", b, a, c);
+	} else {
+	if(b<c && c<a)
 	{
-		printf("Seus números em ordem crescente são: %d, %d, %d", b, c, a);
-	}
-	if(a<b<c)
+		printf("Seus números em ordem crescente são: %d, %d, %d\n", b, c, a);
+	} else {
+	if(a<b && b<c)
 	{
-		printf("Seus números em ordem crescente são: %d, %d, %d", a, b, c);
-	}
-	if(a<c<b)
+		printf("Seus números em ordem crescente são: %d, %d, %d\n", a, b, c);
+	} else {
+	if(a<c && c<b)
 	{
-		printf("Seus números em ordem crescente são: %d, %d, %d", a, c, b);
-	}
-
+		printf("Seus números em ordem crescente são: %d, %d, %d\n", a, c, b);
+    }
+   }
+  }
+  }
+ }
+ }
 }
 
 //11. Faça um programa que leia 3 números e imprima o maior deles.
 void questao11() {
 	int a,b,c;
 	printf("Digite 3 números de sua escolha:\n");
-	scanf(" %d %d %d", a, b, c);
-	if(a>b && a>c || a=b && a>c || a=c && a>b)
+	scanf(" %d %d %d", &a, &b, &c);
+	if(a>b && a>c || a==b && a>c || a>b && a==c)
 	{
-		printf("O maior número é o %d",a);
+		printf("O maior número é o %d\n",a);
 	}
-	if(b>a && b>c || b=c && b>a)
+	if(b>a && b>c || b==c && b>a)
 	{
-		printf("O maior número é o %d",b);
+		printf("O maior número é o %d\n",b);
 	}
-	if(c>a && c>b || a=b=c)
+	if(c>a && c>b || a==b && b==c)
 	{
-		printf("O maior número é o %d",c);
+		printf("O maior número é o %d\n",c);
 	}
 
 }
@@ -244,6 +248,20 @@ void questao11() {
 //• Se é menor de idade
 //• Se é maior de 65 anos
 void questao12() {
+	int i;
+	printf("Digite sua idade:\n");
+	scanf("%d",&i);
+
+	if(i<18){
+		printf("Você é menor de idade.\n");
+	} else {
+		if(i>18){
+			printf("Você é maior de idade.\n");
+		}
+		if(i>65){
+			printf("E também tem mais de 65.\n");
+		}
+	}
 	
 }
 
@@ -391,6 +409,13 @@ int main() {
 		case 10:
 			questao10();
 			break;
+		case 11:
+		    questao11();
+			break;
+		case 12:
+			questao12();
+			break;
+
 		default:
 			printf("Opção inválida!");
 	}
