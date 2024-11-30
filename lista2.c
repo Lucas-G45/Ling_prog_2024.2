@@ -266,9 +266,29 @@ void questao12() {
 }
 
 //13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota da
-//prova 2 de umaluno. O programa deve imprimir o nome, a nota da prova 1, a nota da prova 2, a média das notas e uma das mensagens: "Aprovado", "Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para reprovação e as demais em prova final).
+//prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1, a nota da prova 2, a média das notas e uma das mensagens: 
+//"Aprovado", "Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para reprovação e as demais em prova final).
 void questao13() {
-	
+	float x,y,m;
+	char nome[60];
+	m=0;
+	printf("Digite o nome do aluno:\n");
+	scanf(" %60[^\n]",nome);
+	printf("Digite as notas das provas 1 e 2 do aluno, respectivamente:\n");
+	scanf("%f %f",&x,&y);
+	m=(x+y)/2;
+	printf("O aluno %s tirou %.1f na prova 1 e %.1f na prova 2, então ele foi ", nome, x, y);
+
+	if(m>=7) {
+		printf("aprovado.\n");
+	} else {
+		if(m>=3){
+			printf("para prova final.\n");
+		} else {
+			printf("reprovado.\n");
+		}
+	}
+
 }
 
 //14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
@@ -279,7 +299,26 @@ void questao13() {
 //Maior que R$1200,00 e menor ou igual a R$2000,00 25%
 //Maior que R$2000,00 30%
 void questao14() {
-	
+	float s;
+	printf("Digite seu salário para calcularmos o possível desconto:\n");
+	scanf(" %f",&s);
+
+	if(s>2000.00){
+		s=s-(s*30/100);
+		printf("Seu salário se encontra na faixa do desconto de 30%, logo ele passará a ser: %.2f", s);
+	} else {
+		if(s<=2000 && s>1200) {
+			s=s-(s*25/100);
+			printf("Seu salário se encontra na faixa do desconto de 25%, logo ele passará a ser: %.2f", s);
+		} else {
+			if(s<=1200 && s>600){
+				s=s-(s*20/100);
+				printf("Seu salário se encontro na faixa do desconto de 20%, logo ele passará a ser: %.2f",s);
+			} else {
+				printf("Seu salário não se encaixa na faixa de desconto\n");
+			}
+		}
+	}
 }
 
 //15. Um comerciante comprou umproduto e quer vendê-lo com umlucro de 45% se o valor
@@ -414,6 +453,12 @@ int main() {
 			break;
 		case 12:
 			questao12();
+			break;
+		case 13:
+			questao13();
+			break;
+		case 14:
+			questao14();
 			break;
 
 		default:
