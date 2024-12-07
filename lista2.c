@@ -305,15 +305,15 @@ void questao14() {
 
 	if(s>2000.00){
 		s=s-(s*30/100);
-		printf("Seu salário se encontra na faixa do desconto de 30%, logo ele passará a ser: %.2f", s);
+		printf("Seu salário se encontra na faixa do desconto de 30 porcento, então, ele passará a ser: %.2f", s);
 	} else {
 		if(s<=2000 && s>1200) {
 			s=s-(s*25/100);
-			printf("Seu salário se encontra na faixa do desconto de 25%, logo ele passará a ser: %.2f", s);
+			printf("Seu salário se encontra na faixa do desconto de 25 porcento, logo ele passará a ser: %.2f", s);
 		} else {
 			if(s<=1200 && s>600){
 				s=s-(s*20/100);
-				printf("Seu salário se encontro na faixa do desconto de 20%, logo ele passará a ser: %.2f",s);
+				printf("Seu salário se encontro na faixa do desconto de 20 porcento, logo ele passará a ser: %.2f",s);
 			} else {
 				printf("Seu salário não se encaixa na faixa de desconto\n");
 			}
@@ -321,10 +321,17 @@ void questao14() {
 	}
 }
 
-//15. Um comerciante comprou umproduto e quer vendê-lo com umlucro de 45% se o valor
+//15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o valor
 //da compra for menor que R$20,00, caso contrário, o lucro será de 30%. Faça um programa que leia o valor do produto e imprima o valor da venda.
 void questao15() {
-	
+	float p;
+	printf("Qual o valor da sua compra?\n");
+	scanf("%f", &p);
+	if(p<20) {
+		printf("O valor de venda terá o máximo de lucro, ele será de: R$%.2f\n", p+(p*45/100));
+	} else {
+		printf("O valor da venda terá um lucro menor, ele será de: R$%.2f\n", p+(p*30/100));
+	}
 }
 
 //16. A confederação brasileira de natação irá promover eliminatórias para o próximo
@@ -336,11 +343,41 @@ void questao15() {
 //Juvenil B 14 - 17 anos
 //Sênior maiores de 18 anos
 void questao16() {
-	
+	int i;
+	printf("Digite a sua idade:\n");
+	scanf("%d", &i);
+	if(i<5){
+		printf("A criança ainda não alcançou a idade mínima\n");
+
+	} else {
+		if(i<8) {
+			printf("Categoria infantil A\n");
+
+		} else {
+			if(i<11) {
+				printf("Categoria infantil B\n");
+
+			} else {
+				if(i<14) {
+					printf("Categoria juvenil A\n");
+
+				} else {
+					if(i<=18) {
+						printf("Categoria juvenil B\n");
+
+					} else {
+						printf("Categoria sênior\n");
+					}
+				}
+			}
+		}
+	}
 }
 
-//17. Depois da liberação do governo para as mensalidades dos planos de saúde, as pessoas começaram a fazer pesquisas para descobrir um bom plano, não muito caro. Umvendedor de um plano de saúde apresentou a tabela a seguir. Faça um programa que entre com o nome e a idade de uma pessoa e imprima o nome e o valor que ela deverá pagar.
-//Idade Valor
+//17. Depois da liberação do governo para as mensalidades dos planos de saúde, as pessoas começaram a fazer pesquisas para descobrir um bom plano, não muito caro. 
+//Um vendedor de um plano de saúde apresentou a tabela a seguir. Faça um programa que entre com o nome e a idade de uma pessoa e imprima o nome e o valor que ela deverá pagar.
+//
+//"Idade Valor"
 //Até 10 anos R$30,00
 //Acima de 10 até 29 anos R$60,00
 //Acima de 29 até 45 anos R$120,00
@@ -348,12 +385,89 @@ void questao16() {
 //Acima de 59 até 65 anos R$250,00
 //Maior que 65 anos R$400,00
 void questao17() {
+	char nome[60]; int i;
+	printf("Insira o seu nome\n");
+	scanf(" %60[^\n]",nome);
+	printf("Agora, a sua idade:");
+	scanf(" %d", &i);
 	
+	if(i<11) {
+		printf("Querido %s, você deverá pagar: R$60,00\n", nome);
+
+	} else {
+		if(i<30) {
+			printf("Querido %s, você deverá pagar: R$120,00\n", nome);
+
+		} else {
+			if(i<46) {
+				printf("Querido %s, você deverá pagar: R$120,00\n", nome);
+
+			} else {
+				if(i<60) {
+					printf("Querido %s, você deverá pagar: R$150,00");
+
+				} else {
+					if(i<66) {
+						printf("Querido %s, você deverá pagar: R$250");
+
+					} else {
+						printf("Querido %s, você deverá pagar: R$400,00");
+					}
+				}
+			}
+		}
+	}
 }
 
-//18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês correspondente. Caso o usuário digite umnúmero fora desse intervalo, deverá aparecer uma mensagem informando que não existe mês com este número. Utilize o switch para este problema.
+//18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês correspondente. Caso o usuário digite um número fora desse intervalo, 
+//deverá aparecer uma mensagem informando que não existe mês com este número. Utilize o switch para este problema.
 void questao18() {
-	
+	int mes
+	printf("Digite um número para falarmos seu mês:\n");
+	scanf(" %d", &mes);
+
+	switch (mes) {
+        case 1:
+		    printf("Janeiro");
+			break;
+		case 2:
+			printf("fevereiro");
+			break;
+		case 3:
+			printf("Março");
+			break;
+		case 4:
+			printf("Abril");
+			break;
+		case 5:
+			printf("Maio");
+			break;
+		case 6:
+			printf("Junho");
+			break;
+		case 7:
+			printf("Julho");
+			break;
+		case 8:
+			printf("Agosto");
+			break;
+		case 9:
+			printf("Setembro");
+			break;
+		case 10:
+			printf("Outubro");
+			break;
+		case 11:
+			printf("Novembro");
+			break;
+		case 12:
+			printf("dezembro");
+			break;
+		
+		default:
+			printf("Esse número não pertence a um mêsgit ")
+	}
+
 }
 
 //19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o mesmo número de pontos, criar um programa que informe se uma equipe foi classificada, de acordo com a seguinte especificação:
@@ -459,6 +573,18 @@ int main() {
 			break;
 		case 14:
 			questao14();
+			break;
+		case 15:
+			questao15();
+			break;
+		case 16:
+			questao16();
+			break;
+		case 17:
+			questao17();
+			break;
+		case 18:
+			questao18();
 			break;
 
 		default:
